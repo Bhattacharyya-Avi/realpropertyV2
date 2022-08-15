@@ -1,15 +1,15 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Comment extends Model
+class Favorite extends Model
 {
-    public function article(){
+    public function property(){
 
-        return $this->belongsTo(Post::class);
-        
+        return $this->belongsTo(Property::class);
+
     }
 
     public function user(){

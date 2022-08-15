@@ -2,22 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Page;
-use App\User;
-use App\Message;
+use App\Models\Page;
+use App\Models\User;
+use App\Models\Message;
 
 use Auth;
 use DB;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use App\House;
-use App\Land;
-use App\Building;
-use App\Apartment;
-use App\Warehouse;
+use App\Models\House;
+use App\Models\Land;
+use App\Models\Building;
+use App\Models\Apartment;
+use App\Models\Warehouse;
 use App\UserEmail;
-use App\Article;
+use App\Models\Article;
 use App\Comment;
 use Carbon\Carbon;
 
