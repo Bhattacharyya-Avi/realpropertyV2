@@ -1,13 +1,13 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Building extends Model
+class Warehouse extends Model
 {
     protected $fillable = [
-        'agreement','floorsize','floor','lift','carpark','nearestSchool','nearestRailway','nearestBusStop'
+        'agreement','electricity','carpark','size'
     ];
 
     public function property(){

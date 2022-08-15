@@ -1,15 +1,15 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Land extends Model
+class House extends Model
 {
     protected $fillable = [
-        'electricity','size','tapwater','nearestSchool','nearestRailway','nearestBusStop'
+        'noOfRooms', 'noOfKitchen', 'noOfFloors','noOfWashrooms','size','swimmingPool','garden','nearestSchool','nearestRailway','nearestBusStop'
     ];
-
+    
     public function property(){
 
         return $this->belongsTo(Property::class);
