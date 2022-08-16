@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Alert;
-use App\Building;
-use App\Property;
-use App\MailNotification;
+use App\Models\Building;
+use App\Models\Property;
+use App\Models\MailNotification;
 use App\Mail\EmailNotification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;

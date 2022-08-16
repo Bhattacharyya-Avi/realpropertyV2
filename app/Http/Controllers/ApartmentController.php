@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use Mail;
 use Alert;
-use App\Apartment;
+use App\Models\Property;
 use App\MailNotification;
-use App\Mail\EmailNotification;
-use App\Property;
+use App\Models\Apartment;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use App\Mail\EmailNotification;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
 
 class ApartmentController extends Controller
@@ -138,7 +139,7 @@ class ApartmentController extends Controller
                 $message->status = 'modified';
                 $message->subject = "Your property has been modified!";
 
-                \Mail::to($message->receiver_email)->send(new EmailNotification($message));
+                Mail::to($message->receiver_email)->send(new EmailNotification($message));
             }
 
             Alert::success('Your property has been edited successfully!', 'Successfully Updated')->autoclose(3000);

@@ -8,13 +8,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Auth;
 use Image;
-use App\User;
-use App\Offer;
-use App\UserEmail;
+use App\Models\User;
+use App\Models\Offer;
+use App\Models\UserEmail;
 use Illuminate\Support\Facades\DB;
 use Alert;
-use App\Favorite;
-use App\Property;
+use App\Models\Favorite;
+use App\Models\Property;
 
 class ProfileController extends Controller
 {

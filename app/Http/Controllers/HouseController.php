@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Alert;
-use App\House;
-use App\Property;
+use App\Models\House;
+use App\Models\Property;
 use App\MailNotification;
 use App\Mail\EmailNotification;
 use Illuminate\Http\Request;

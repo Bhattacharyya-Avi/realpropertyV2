@@ -1,14 +1,15 @@
 <?php
-use App\UserEmail;
-use App\Favorite;
-use App\Offer;
+use App\Models\Offer;
+use App\Models\Favorite;
+use App\Models\UserEmail;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 if (!function_exists('userNameById')) {
   function userNameById($userId)
   {
 
-    $user = App\User::find($userId);
+    $user = App\Models\User::find($userId);
 
     if ($user) {
       return $user->name;
@@ -22,7 +23,7 @@ if (!function_exists('userAvatarById')) {
   function userAvatarById($userId)
   {
 
-    $user = App\User::find($userId);
+    $user = App\Models\User::find($userId);
 
     if ($user) {
       return $user->avatar;

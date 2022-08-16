@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Alert;
-use App\Land;
-use App\MailNotification;
+use App\Models\Land;
+use App\Models\MailNotification;
 use App\Mail\EmailNotification;
-use App\Property;
+use App\Models\Property;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;

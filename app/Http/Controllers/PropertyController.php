@@ -1,15 +1,15 @@
-<?php
+Models\<?php
 
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Property;
-use App\House;
+use App\Models\Property;
+use App\Models\House;
 use Image;
-use App\Land;
-use App\Building;
-use App\Apartment;
-use App\Warehouse;
+use App\Models\Land;
+use App\Models\Building;
+use App\Models\Apartment;
+use App\Models\Warehouse;
 
 class PropertyController extends Controller
 {

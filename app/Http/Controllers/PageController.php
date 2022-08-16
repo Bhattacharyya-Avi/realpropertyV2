@@ -16,9 +16,9 @@ use App\Models\Land;
 use App\Models\Building;
 use App\Models\Apartment;
 use App\Models\Warehouse;
-use App\UserEmail;
+use App\Models\UserEmail;
 use App\Models\Article;
-use App\Comment;
+use App\Models\Comment;
 use Carbon\Carbon;
 
 class PageController extends Controller

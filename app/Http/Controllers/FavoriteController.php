@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\House;
-use App\Favorite;
+use App\Models\House;
+use App\Models\Favorite;
 use Illuminate\Support\Facades\Auth;
 use Alert;
-use App\Land;
-use App\Building;
-use App\Apartment;
-use App\Warehouse;
+use App\Models\Land;
+use App\Models\Building;
+use App\Models\Apartment;
+use App\Models\Warehouse;
 
 class FavoriteController extends Controller
 {
