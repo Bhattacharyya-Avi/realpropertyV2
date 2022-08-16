@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Offer;
-use App\Land;
-use App\House;
-use App\Building;
-use App\Apartment;
-use App\Warehouse;
+use App\Models\Offer;
+use App\Models\Land;
+use App\Models\House;
+use App\Models\Building;
+use App\Models\Apartment;
+use App\Models\Warehouse;
 use App\User;
 use Alert;
 use Illuminate\Support\Facades\Validator;

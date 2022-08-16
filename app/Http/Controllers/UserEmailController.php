@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Mail\ContactMail;
 use App\Mail\InqueryEmail;
-use App\UserEmail;
-use App\User;
+use App\Models\UserEmail;
+use App\Models\User;
 use Alert;
 use Illuminate\Support\Facades\Validator;
 

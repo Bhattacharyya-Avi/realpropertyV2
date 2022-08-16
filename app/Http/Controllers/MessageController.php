@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\InqueryEmail;
-use App\Message;
+use App\Models\Message;
 use Illuminate\Http\Request;
 use App\UserEmail;
 use App\Mail\ContactMail;
