@@ -11,19 +11,28 @@ use Illuminate\Support\Facades\Route;
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
+|<?php
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
 |
 */
-
-
-
 
 Route::get('/','PageController@index');
 Route::get('/logout','PageController@logout');
 
+//admin
 Route::get('/admin','AdminController@index')->name('admin.dashboard');
 Route::get('/admin/login','Auth\AdminLoginController@showLoginForm')->name('admin.login');
 Route::post('/admin/login','Auth\AdminLoginController@login')->name('admin.login.submit');
 Route::get('/admin/logout','Auth\AdminLoginController@logout')->name('admin.logout');
+
 
 Route::name('/home')->get('/')->uses('PageController@index');
 Route::get('/home','PageController@index');
@@ -62,12 +71,12 @@ Route::post('/house/{house}/offer','OfferController@houseOffer');
 Route::post('/house/{house}/contactowner','UserEmailController@houseContact');
 Route::post('/house/{house}/report','ReportPropertyController@houseReport');
 Route::get('/house/{house}/favorite','FavoriteController@favoriteHouse');
-Route::get('/profile/house/{house}/edit','HouseController@showEditHouse');
-Route::get('/admin/house/{house}/edit','AdminController@showAdminEditHouse');
+Route::get('/profile/house/{house}/edit','HouseController@showEditHouse'); //auth
+Route::get('/admin/house/{house}/edit','AdminController@showAdminEditHouse'); // auth admin
 Route::post('/admin/house/{house}/edit','HouseController@editHouse');
 Route::post('/profile/house/{house}/edit','HouseController@editHouse');
 Route::post('/profile/house/{house}/delete','HouseController@deleteHouse');
-Route::post('/admin/house/{house}/delete','HouseController@deleteHouse');
+Route::post('/admin/house/{house}/delete','HouseController@deleteHouse'); // auth admin
 
 Route::get('/land/serach','PageController@landsearch');
 Route::get('/land/{land}','LandController@viewLand');
@@ -76,12 +85,12 @@ Route::post('/land/{land}/offer','OfferController@landOffer');
 Route::post('/land/{land}/contactowner','UserEmailController@landContact');
 Route::post('/land/{land}/report','ReportPropertyController@landReport');
 Route::get('/land/{land}/favorite','FavoriteController@favoriteLand');
-Route::get('/profile/land/{land}/edit','LandController@showEditLand') ;
-Route::get('/admin/land/{land}/edit','AdminController@showAdminEditLand') ;
+Route::get('/profile/land/{land}/edit','LandController@showEditLand') ; //auth
+Route::get('/admin/land/{land}/edit','AdminController@showAdminEditLand') ; //auth admin
 Route::post('/admin/land/{land}/edit','LandController@editLand');
 Route::post('/profile/land/{land}/edit','LandController@editLand');
 Route::post('/profile/land/{land}/delete','LandController@deleteLand');
-Route::post('/admin/land/{land}/delete','LandController@deleteLand') ;
+Route::post('/admin/land/{land}/delete','LandController@deleteLand') ; //auth admin
 
 Route::get('/building/serach','PageController@buildingsearch');
 Route::get('/building/{building}','BuildingController@viewBuilding');
@@ -90,12 +99,12 @@ Route::post('/building/{building}/offer','OfferController@buildingOffer');
 Route::post('/building/{building}/contactowner','UserEmailController@buildingContact');
 Route::post('/building/{building}/report','ReportPropertyController@buildingReport');
 Route::get('/building/{building}/favorite','FavoriteController@favoriteBuilding');
-Route::get('/profile/building/{building}/edit','BuildingController@showEditBuilding') ;
-Route::get('/admin/building/{building}/edit','AdminController@showAdminEditBuilding') ;
+Route::get('/profile/building/{building}/edit','BuildingController@showEditBuilding') ; //auth
+Route::get('/admin/building/{building}/edit','AdminController@showAdminEditBuilding') ; //auth admin
 Route::post('/admin/building/{building}/edit','BuildingController@editBuilding');
 Route::post('/profile/building/{building}/edit','BuildingController@editBuilding');
 Route::post('/profile/building/{building}/delete','BuildingController@deleteBuilding');
-Route::post('/admin/building/{building}/delete','BuildingController@deleteBuilding') ;
+Route::post('/admin/building/{building}/delete','BuildingController@deleteBuilding') ; //auth admin
 
 Route::get('/apartment/serach','PageController@apartmentsearch');
 Route::get('/apartment/{apartment}','ApartmentController@viewApartment');
@@ -104,12 +113,12 @@ Route::post('/apartment/{apartment}/offer','OfferController@apartmentOffer');
 Route::post('/apartment/{apartment}/contactowner','UserEmailController@apartmentContact');
 Route::post('/apartment/{apartment}/report','ReportPropertyController@apartmentReport');
 Route::get('/apartment/{apartment}/favorite','FavoriteController@favoriteApartment');
-Route::get('/profile/apartment/{apartment}/edit','ApartmentController@showEditApartment') ;
-Route::get('/admin/apartment/{apartment}/edit','AdminController@showAdminEditApartment') ;
+Route::get('/profile/apartment/{apartment}/edit','ApartmentController@showEditApartment') ; //auth
+Route::get('/admin/apartment/{apartment}/edit','AdminController@showAdminEditApartment') ; //auth admin
 Route::post('/admin/apartment/{apartment}/edit','ApartmentController@editApartment');
 Route::post('/profile/apartment/{apartment}/edit','ApartmentController@editApartment');
 Route::post('/profile/apartment/{apartment}/delete','ApartmentController@deleteApartment');
-Route::post('/admin/apartment/{apartment}/delete','ApartmentController@deleteApartment') ;
+Route::post('/admin/apartment/{apartment}/delete','ApartmentController@deleteApartment') ; //auth admin
 
 Route::get('/warehouse/serach','PageController@warehousesearch');
 Route::get('/warehouse/{warehouse}','WarehouseController@viewWarehouse');
@@ -118,12 +127,12 @@ Route::post('/warehouse/{warehouse}/offer','OfferController@warehouseOffer');
 Route::post('/warehouse/{warehouse}/contactowner','UserEmailController@warehouseContact');
 Route::post('/warehouse/{warehouse}/report','ReportPropertyController@warehouseReport');
 Route::get('/warehouse/{warehouse}/favorite','FavoriteController@favoriteWarehouse');
-Route::get('/profile/warehouse/{warehouse}/edit','WarehouseController@showEditWarehouse') ;
-Route::get('/admin/warehouse/{warehouse}/edit','AdminController@showAdminEditWarehouse') ;
+Route::get('/profile/warehouse/{warehouse}/edit','WarehouseController@showEditWarehouse') ; //auth
+Route::get('/admin/warehouse/{warehouse}/edit','AdminController@showAdminEditWarehouse') ; //auth admin
 Route::post('/admin/warehouse/{warehouse}/edit','WarehouseController@editWarehouse');
 Route::post('/profile/warehouse/{warehouse}/edit','WarehouseController@editWarehouse');
 Route::post('/profile/warehouse/{warehouse}/delete','WarehouseController@deleteWarehouse');
-Route::post('/admin/warehouse/{warehouse}/delete','WarehouseController@deleteWarehouse') ;
+Route::post('/admin/warehouse/{warehouse}/delete','WarehouseController@deleteWarehouse') ; //auth admin
 
 
 
@@ -131,6 +140,7 @@ Route::post('/admin/warehouse/{warehouse}/delete','WarehouseController@deleteWar
 Route::post('/sendmessage','MessageController@contactUsEmail');
 
 //User Profile Section
+// auth start
 Route::get('/profile','ProfileController@loadUserDashboard') ;
 Route::get('/profile/changepassword','PageController@changePassword') ;
 Route::get('/profile/editaccount','PageController@editAccount') ;
@@ -160,8 +170,10 @@ Route::post('/profile/updateavatar','ProfileController@updateAvatar') ;
 Route::post('/profile/user/{user}/delete','ProfileController@deleteUserAccount') ;
 Route::post('/profile/updateAccount','ProfileController@updateAccount') ;
 Route::post('/profile/updatepassword','ProfileController@changePassword') ;
+// auth end
 
 //Admin Panel
+//auth admin start
 Route::post('/admin/updateavatar','AdminController@updateAvatar') ;
 Route::get('/admin/user/{user}/view','AdminController@viewUser') ;
 Route::get('/admin/property/all','AdminController@viewAllProperty') ;
@@ -193,15 +205,18 @@ Route::get('/admin/inquery/view','AdminController@allInquery') ;
 Route::get('/admin/inquery/{message}/reply','AdminController@viewReplyInquery') ;
 Route::post('/admin/inquery/reply','AdminController@replyInquery') ;
 Route::post('/admin/inquery/{message}/delete','AdminController@deleteInquey') ;
+//auth admin end
 
 //Blog
 Route::get('/blog','PageController@showBlog');
 Route::get('/blog/{article}/view','PageController@showBlogPost');
+// auth admin start
 Route::get('/blog/new','ArticleController@newBlogPost') ;
 Route::post('/blog/new','ArticleController@addBlogPost') ;
 Route::get('/blog/{article}/edit','ArticleController@showEditBlogPost') ;
 Route::post('/blog/{article}/edit','ArticleController@editBlogPost') ;
 Route::post('/blog/comment','CommentController@addComment');
+//auth admin end
 Route::get('/blog/comment/{comment}/delete','CommentController@deleteComment') ;
 
 // Auth::routes();
